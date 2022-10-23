@@ -10,6 +10,7 @@
   --desaturated-blue: hsl(235, 45%, 61%);
   --pale-blue: hsl(236, 100%, 87%);
   --blue: hsl(246, 80%, 60%);
+  --card-hover-blue: hsl(235, 45%, 35%);
   --card-tile-size: 18px;
 }
 

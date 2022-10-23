@@ -72,6 +72,7 @@ const CardUserAvatarName = styled.h3`
 
 const CardUserPeriod = styled.ul`
   padding: 1.6rem;
+  border-radius: 0 0 1rem 1rem;
 
   @media screen and (max-width: ${bp.sm}) {
     padding: 1.5rem 2rem;
