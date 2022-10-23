@@ -22,7 +22,7 @@ type Props = {
   items: Item[];
 };
 
-const Home: NextPage = ({ items }: Props) => {
+const Home: NextPage<Props> = ({ items }: Props) => {
   const [period, setPeriod] = useState<string>("daily");
 
   return (
