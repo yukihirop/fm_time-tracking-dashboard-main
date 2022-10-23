@@ -1,9 +1,31 @@
+:root {
+  --light-orange: hsl(15, 100%, 70%);
+  --soft-blue: hsl(195, 74%, 62%);
+  --light-red: hsl(348, 100%, 68%);
+  --lime-green: hsl(145, 58%, 55%);
+  --violet: hsl(264, 64%, 52%);
+  --soft-orange: hsl(43, 84%, 65%);
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%)
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+  --card-tile-size: 18px;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Rubik', sans-serif;
+  color: white;
+  background: var(--very-dark-blue);
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
 }
 
 a {
@@ -23,4 +45,11 @@ a {
     color: white;
     background: black;
   }
+}
+
+
+@media screen (max-width: var(--md)) {
+  body {
+    min-height: 900px;
+  }    
 }
