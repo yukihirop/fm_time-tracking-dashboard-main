@@ -2,6 +2,10 @@
 
 ![Design preview for the Time tracking dashboard coding challenge](./design/desktop-preview.jpg)
 
+I used the design of the following repositories as a guide.
+
+[Cheosphere/time-tracking-dashboard-main](https://github.com/Cheosphere/time-tracking-dashboard-main)
+
 ## Welcome! 👋
 
 Thanks for checking out this front-end coding challenge.
