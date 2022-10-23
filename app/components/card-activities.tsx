@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from '@emotion/styled'
+import React from "react";
+import styled from "@emotion/styled";
 import bp from "styles/breakpoint";
 
 const CardActivitiesContainer = styled.div`
@@ -121,23 +121,44 @@ const CardActivitiiesDataContentWeek = styled.p`
   color: var(--pale-blue);
 `;
 
-const CardActivities = () => (
-  <CardActivitiesContainer>
-    <CardActivitiesData>
-      <CardActivitiesDataHeader>
-        <CardActivitiesDataHeaderTitle>Work</CardActivitiesDataHeaderTitle>
-        <figure>
-          <img src="images/icon-ellipsis.svg" />
-        </figure>
-      </CardActivitiesDataHeader>
-      <CardActivitiesDataContent>
-        <CardActivitiesDataContentHour>32hrs</CardActivitiesDataContentHour>
-        <CardActivitiiesDataContentWeek>
-          Last Week - 36hrs
-        </CardActivitiiesDataContentWeek>
-      </CardActivitiesDataContent>
-    </CardActivitiesData>
-  </CardActivitiesContainer>
-);
+type Props = {
+  title: string;
+  period: string;
+  timeframesCurrent: number;
+  timeframesPrevious: number;
+};
 
-export default CardActivities
+const CardActivities = ({
+  title,
+  period,
+  timeframesCurrent,
+  timeframesPrevious,
+}: React.PropsWithChildren<Props>) => {
+  const formattedPeriod = () => {
+    if (period === "daily") return "Day";
+    if (period === "weekly") return "Weekly";
+    if (period === "monthly") return "Monthly";
+  };
+  return (
+    <CardActivitiesContainer>
+      <CardActivitiesData>
+        <CardActivitiesDataHeader>
+          <CardActivitiesDataHeaderTitle>{title}</CardActivitiesDataHeaderTitle>
+          <figure>
+            <img src="images/icon-ellipsis.svg" />
+          </figure>
+        </CardActivitiesDataHeader>
+        <CardActivitiesDataContent>
+          <CardActivitiesDataContentHour>
+            {timeframesCurrent}hrs
+          </CardActivitiesDataContentHour>
+          <CardActivitiiesDataContentWeek>
+            Last {formattedPeriod()} - {timeframesPrevious}hrs
+          </CardActivitiiesDataContentWeek>
+        </CardActivitiesDataContent>
+      </CardActivitiesData>
+    </CardActivitiesContainer>
+  );
+};
+
+export default CardActivities;

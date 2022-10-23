@@ -98,8 +98,17 @@ const CardUserPeriodItem = styled.li`
   }
 `;
 
-const CardUser = () => {
-  const [active, setActive] = useState("Daily");
+type Props = {
+  onClick: (val: string) => void;
+};
+
+const CardUser = ({ onClick }: Props) => {
+  const [active, setActive] = useState("daily");
+
+  const handleClick = (val: string) => {
+    setActive(val);
+    onClick(val);
+  };
 
   return (
     <CardUserContainer>
@@ -114,20 +123,20 @@ const CardUser = () => {
       </CardUserAvatar>
       <CardUserPeriod>
         <CardUserPeriodItem
-          css={active === "Daily" ? CardUserPeriodItemActive : undefined}
-          onClick={(e) => setActive("Daily")}
+          css={active === "daily" ? CardUserPeriodItemActive : undefined}
+          onClick={(e) => handleClick("daily")}
         >
           <a href="#">Daily</a>
         </CardUserPeriodItem>
         <CardUserPeriodItem
-          css={active === "Weekly" ? CardUserPeriodItemActive : undefined}
-          onClick={(e) => setActive("Weekly")}
+          css={active === "weekly" ? CardUserPeriodItemActive : undefined}
+          onClick={(e) => handleClick("weekly")}
         >
           <a href="#">Weekly</a>
         </CardUserPeriodItem>
         <CardUserPeriodItem
-          css={active === "Monthly" ? CardUserPeriodItemActive : undefined}
-          onClick={(e) => setActive("Monthly")}
+          css={active === "monthly" ? CardUserPeriodItemActive : undefined}
+          onClick={(e) => handleClick("monthly")}
         >
           <a href="#">Monthly</a>
         </CardUserPeriodItem>
